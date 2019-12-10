@@ -16,9 +16,9 @@ class Map extends React.Component {
 
   componentDidMount() {
     mapboxgl.accessToken = MY_API_KEY
-    var map = new mapboxgl.Map({
+    const map = new mapboxgl.Map({
       container: 'map', // container id
-      style: 'mapbox://styles/mapbox/dark-v10',
+      style: 'mapbox://styles/mapbox/streets-v11',
       center: [this.state.lng, this.state.lat], // starting position
       zoom: this.state.zoom // starting zoom
     })
@@ -29,10 +29,8 @@ class Map extends React.Component {
           enableHighAccuracy: true
         },
         trackUserLocation: true
-      }), 'bottom-right'
+      }), 'top-right'
     )
-    //navigation control
-    map.addControl(new mapboxgl.NavigationControl(), 'top-left');
     //save coordinates
     map.on('move', () => {
       this.setState({
@@ -59,20 +57,20 @@ class Map extends React.Component {
       var res = request.response;
       //console.log(JSON.stringify(res))
       //console.log(res)
-      var city = res['features'][0] != undefined ? res['features'][0]['text'] : 'Não sei'
-      console.log('CIDADE: ' + city)
+      var city = res['features'][0] !== undefined ? res['features'][0]['text'] : 'um lugar não identificado'
+      window.alert('você está em ' + city)
     }
 
   }
 
   render() {
-    //console.log(this.state.lat + '  ' + this.state.lng)
+
     return (
       <div>
         <div className='sidebarStyle'>
-          <div>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
+          <div>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}x</div>
         </div>
-        <button onClick={this.getMyLocation.bind(this)}>Onde estou?</button>
+        <button className='buttonStyle' onClick={this.getMyLocation.bind(this)}>Onde estou?</button>
         <div ref={el => this.mapContainer = el} className='mapContainer' id='map' />
       </div>
     )
