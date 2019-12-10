@@ -1,0 +1,54 @@
+{
+  "type": "FeatureCollection",
+  "query": [
+    -49.2647,
+    -25.431
+  ],
+  "features": [
+    {
+      "id": "place.6363694673782740",
+      "type": "Feature",
+      "place_type": [
+        "place"
+      ],
+      "relevance": 1,
+      "properties": {
+        "wikidata": "Q4361"
+      },
+      "text": "Curitiba",
+      "place_name": "Curitiba, Paraná, Brazil",
+      "bbox": [
+        -49.389338636,
+        -25.6453862197367,
+        -49.185224999,
+        -25.3467360297306
+      ],
+      "center": [
+        -49.2712,
+        -25.4296
+      ],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.2712,
+          -25.4296
+        ]
+      },
+      "context": [
+        {
+          "id": "region.7375933460742400",
+          "short_code": "BR-PR",
+          "wikidata": "Q15499",
+          "text": "Paraná"
+        },
+        {
+          "id": "country.12447454793682710",
+          "short_code": "br",
+          "wikidata": "Q155",
+          "text": "Brazil"
+        }
+      ]
+    }
+  ],
+  "attribution": "NOTICE: © 2019 Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained. POI(s) provided by Foursquare."
+}
