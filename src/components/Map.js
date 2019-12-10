@@ -18,7 +18,7 @@ class Map extends React.Component {
     mapboxgl.accessToken = MY_API_KEY
     const map = new mapboxgl.Map({
       container: 'map', // container id
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/dark-v10',
       center: [this.state.lng, this.state.lat], // starting position
       zoom: this.state.zoom // starting zoom
     })
@@ -64,7 +64,6 @@ class Map extends React.Component {
   }
 
   render() {
-
     return (
       <div>
         <div className='sidebarStyle'>
